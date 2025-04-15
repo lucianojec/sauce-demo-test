@@ -19,21 +19,20 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install Robot Framework and dependencies
+      - name: Install dependencies
         run: |
           pip install robotframework
           pip install -r requirements.txt
 
-      - name: Install Chrome and XVFB
+      - name: Install Chrome
         run: |
           sudo apt-get update
           sudo apt-get install -y google-chrome-stable
           sudo apt-get install -y xvfb
 
-      - name: Install compatible ChromeDriver
+      - name: Install ChromeDriver manually (versão compatível)
         run: |
-          CHROME_VERSION=$(google-chrome-stable --version | grep -oP '\d+\.\d+' | head -1)
-          DRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION}")
+          DRIVER_VERSION=119.0.6045.105
           wget -q -O /tmp/chromedriver.zip "https://chromedriver.storage.googleapis.com/${DRIVER_VERSION}/chromedriver_linux64.zip"
           unzip -o /tmp/chromedriver.zip -d /usr/local/bin/
           chmod +x /usr/local/bin/chromedriver
