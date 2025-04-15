@@ -1,0 +1,31 @@
+# Diretórios
+bin/
+reports/
+output/
+Result/*
+logs/
+temp/
+environment/
+.idea/
+.vscode/
+
+# Arquivos
+*.pyc
+*.log
+*.tmp
+*.db
+*.env
+*.lock
+*.sqlite3
+log.html
+output.xml
+report.html
+*.png
+
+# IDE específicos
+.idea/
+.vscode/
+
+# Outros
+.DS_Store
+Thumbs.db
