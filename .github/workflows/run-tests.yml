@@ -19,7 +19,7 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install Robot Framework
+      - name: Install Robot Framework and dependencies
         run: |
           pip install robotframework
           pip install -r requirements.txt
@@ -30,9 +30,9 @@ jobs:
           sudo apt-get install -y google-chrome-stable
           sudo apt-get install -y xvfb
 
-      - name: Install ChromeDriver compatible with Chrome
+      - name: Install compatible ChromeDriver
         run: |
-          CHROME_VERSION=$(google-chrome-stable --version | grep -oP '\d+' | head -1)
+          CHROME_VERSION=$(google-chrome-stable --version | grep -oP '\d+\.\d+' | head -1)
           DRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION}")
           wget -q -O /tmp/chromedriver.zip "https://chromedriver.storage.googleapis.com/${DRIVER_VERSION}/chromedriver_linux64.zip"
           unzip -o /tmp/chromedriver.zip -d /usr/local/bin/
