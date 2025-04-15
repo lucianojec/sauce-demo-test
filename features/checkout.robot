@@ -1,5 +1,5 @@
 *** Settings ***
-Resource         ../Resources/routes.resource
+Resource         ../resources/routes.resource
 Test Teardown    Close Browser
 
 *** Test Cases ***

@@ -1,5 +1,5 @@
 *** Settings ***
-Resource    ../Resources/routes.resource
+Resource    ../resources/routes.resource
 
 *** Keywords ***
 Dado que estou logado no site
