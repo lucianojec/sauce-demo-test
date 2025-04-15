@@ -8,13 +8,10 @@ Library     Process
 Library     Collections
 Library     Process
 
-Resource    ../resources/Config.robot
+Resource    Config.robot
 
 Resource    ../pages/login.robot
 Resource    ../pages/checkout.robot
 
 Resource    ../steps/login.robot
 Resource    ../steps/checkout.robot
-
-
-
