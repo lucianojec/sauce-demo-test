@@ -12,10 +12,10 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
         python-version: '3.12'
 
@@ -31,8 +31,9 @@ jobs:
         export PATH=$PATH:/usr/lib/chromium-browser/
         robot -d results features/
 
-    - name: Upload Robot Framework reports
-      uses: actions/upload-artifact@v2
-      with:
-        name: robot-report
-        path: results/
+    # Temporariamente removido: Upload de artefatos
+    # - name: Upload Robot Framework reports
+    #   uses: actions/upload-artifact@v2
+    #   with:
+    #     name: robot-report
+    #     path: results/
