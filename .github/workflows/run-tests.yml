@@ -32,7 +32,7 @@ jobs:
         robot -d results features/
 
     - name: Upload Robot Framework reports
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v2
       with:
         name: robot-report
         path: results/
